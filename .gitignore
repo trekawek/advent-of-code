@@ -4,6 +4,7 @@ out/
 !**/src/test/**/out/
 *.iml
 input/
+aoc-2025/**/*.txt
 
 ### Eclipse ###
 .apt_generated
