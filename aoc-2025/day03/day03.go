@@ -11,10 +11,10 @@ import (
 func main() {
 	lines := utils.ReadAllLines("input.txt")
 
-	var result int
+	var result uint64
 	switch utils.GetPartNumber() {
 	case 1:
-		result = part01.Solve(lines)
+		result = uint64(part01.Solve(lines))
 	case 2:
 		result = part02.Solve(lines)
 	default:
