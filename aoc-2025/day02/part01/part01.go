@@ -1,6 +1,10 @@
 package part01
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/trekawek/advent-of-code/aoc-2025/utils"
+)
 
 func IsInvalid(i uint64) bool {
 	s := fmt.Sprintf("%d", i)
@@ -11,7 +15,7 @@ func IsInvalid(i uint64) bool {
 	return s[:m] == s[m:]
 }
 
-func Solve(ranges []Range) uint64 {
+func Solve(ranges []utils.Range) uint64 {
 	var s uint64
 	for _, r := range ranges {
 		for i := range r.Iterate {

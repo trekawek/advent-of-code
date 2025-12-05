@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/trekawek/advent-of-code/aoc-2025/day02/part01"
+	"github.com/trekawek/advent-of-code/aoc-2025/utils"
 )
 
 func IsInvalid(i uint64) bool {
@@ -24,7 +24,7 @@ func IsInvalid(i uint64) bool {
 	return false
 }
 
-func Solve(ranges []part01.Range) uint64 {
+func Solve(ranges []utils.Range) uint64 {
 	var s uint64
 	for _, r := range ranges {
 		for i := range r.Iterate {
