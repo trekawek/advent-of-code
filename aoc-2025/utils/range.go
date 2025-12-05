@@ -7,6 +7,10 @@ type Range struct {
 	To   uint64
 }
 
+func NewRange(from, to uint64) Range {
+	return Range{from, to}
+}
+
 func (r *Range) Iterate(yield func(uint64) bool) {
 	i := r.From
 	for i <= r.To {
@@ -15,6 +19,10 @@ func (r *Range) Iterate(yield func(uint64) bool) {
 		}
 		i++
 	}
+}
+
+func (r *Range) Length() uint64 {
+	return r.To - r.From + 1
 }
 
 func (r *Range) Contains(i uint64) bool {
