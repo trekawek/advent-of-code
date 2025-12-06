@@ -19,7 +19,7 @@ func NewOperator(r rune) Operator {
 	case '*':
 		return Operator{string(r), func(a, b int) int { return a * b }, 1}
 	default:
-		panic(fmt.Errorf("Invalid operator %c", r))
+		panic(fmt.Errorf("invalid operator %c", r))
 	}
 }
 
