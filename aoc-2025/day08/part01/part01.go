@@ -103,8 +103,7 @@ func Solve(lines []string, pairsCount int) int {
 	sets := InitializeSets(len(boxes))
 	pairs := GetSortedPairs(boxes)
 
-	for i := range pairsCount {
-		p := pairs[i]
+	for _, p := range pairs[:pairsCount] {
 		Merge(sets, p.B1, p.B2)
 	}
 
@@ -115,9 +114,9 @@ func Solve(lines []string, pairsCount int) int {
 	slices.Sort(setSizes)
 	slices.Reverse(setSizes)
 
-	s := 1
-	for i := range 3 {
-		s *= setSizes[i]
+	p := 1
+	for _, s := range setSizes[:3] {
+		p *= s
 	}
-	return s
+	return p
 }
