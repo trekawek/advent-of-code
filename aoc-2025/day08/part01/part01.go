@@ -12,8 +12,8 @@ import (
 type Box [3]int
 
 type Pair struct {
-	b1 int
-	b2 int
+	B1 int
+	B2 int
 	d  float64
 }
 
@@ -77,8 +77,11 @@ func getUniqueSets(sets []map[int]bool) []map[int]bool {
 	return uniqueSets
 }
 
-func merge(connections []map[int]bool, i, j int) {
+func Merge(connections []map[int]bool, i, j int) bool {
 	n := map[int]bool{}
+	if connections[i][j] {
+		return false
+	}
 	for e := range connections[i] {
 		n[e] = true
 	}
@@ -88,6 +91,7 @@ func merge(connections []map[int]bool, i, j int) {
 	for e := range n {
 		connections[e] = n
 	}
+	return true
 }
 
 func min(m map[int]bool) int {
@@ -101,7 +105,7 @@ func Solve(lines []string, pairsCount int) int {
 
 	for i := range pairsCount {
 		p := pairs[i]
-		merge(sets, p.b1, p.b2)
+		Merge(sets, p.B1, p.B2)
 	}
 
 	var setSizes []int
