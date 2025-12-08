@@ -78,10 +78,10 @@ func getUniqueSets(sets []map[int]bool) []map[int]bool {
 }
 
 func Merge(connections []map[int]bool, i, j int) bool {
-	n := map[int]bool{}
 	if connections[i][j] {
 		return false
 	}
+	n := map[int]bool{}
 	for e := range connections[i] {
 		n[e] = true
 	}
