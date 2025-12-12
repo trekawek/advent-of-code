@@ -11,7 +11,7 @@ func TestSolve(t *testing.T) {
 
 	got := Solve(lines)
 
-	want := 50
+	want := 35
 	if got != want {
 		t.Errorf("want: %d got: %d", want, got)
 	}

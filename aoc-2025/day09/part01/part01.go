@@ -8,19 +8,19 @@ import (
 )
 
 type Pair struct {
-	x int
-	y int
+	X int
+	Y int
 }
 
 func Area(p1 Pair, p2 Pair) int {
-	return utils.Abs(p1.x-p2.x+1) * utils.Abs(p1.y-p2.y+1)
+	return (utils.Abs(p1.X-p2.X) + 1) * (utils.Abs(p1.Y-p2.Y) + 1)
 }
 
 func Parse(lines []string) []Pair {
 	var pairs []Pair
 	for _, l := range lines {
 		p := Pair{}
-		fmt.Sscanf(l, "%d,%d", &p.x, &p.y)
+		fmt.Sscanf(l, "%d,%d", &p.X, &p.Y)
 		pairs = append(pairs, p)
 	}
 	return pairs
